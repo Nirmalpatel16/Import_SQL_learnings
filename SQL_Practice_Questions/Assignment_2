@@ -1,0 +1,54 @@
+/*
+ASSIGNMENT 02
+Problem Statement:
+You will learn how to create tables, work with where clause and basic operators
+
+Tasks to be done:
+1. Create a customer table which comprises of these columns – ‘customer_id’, ‘first_name’,
+‘last_name’, ‘email’, ‘address’, ‘city’,’state’,’zip’
+2. Insert 5 new records into the table
+3. Select only the ‘first_name’ & ‘last_name’ columns from the customer table
+4. Select those records where ‘first_name’ starts with “G” and city is ‘San Jose’
+*/
+
+-----------------------------------------------
+Create database Assignment_02;
+use assignment_02;
+------------------------------------------------
+CREATE TABLE Customer (
+    Customer_ID INT(10) PRIMARY KEY,
+    First_Name VARCHAR(225),
+    Last_Name VARCHAR(225),
+    Email VARCHAR(225) UNIQUE,
+    Address VARCHAR(225),
+    City VARCHAR(50),
+    State VARCHAR(50),
+    Zip INT(10)
+);
+-------------------------------------------------------------------------------------
+
+insert into Customer value (1,'A','a','aaa@gmail.com','abc','Pune','MH',0001),
+                            (2,'B','b','bbb@gmail.com','def','Mumbai','MH',0001),
+                            (3,'C','c','ccc@gmail.com','ghi','Nundurbar','MH',0001),
+                            (4,'D','d','ddd@gmail.com','jkl','Indore','MP',0001),
+                            (5,'E','e','eee@gmail.com','mno','Bangolar','KA',0001),
+                            (6,'F','f','fff@gmail.com','pqr','Jaipur','RJ',0001);
+                            
+---------------------------------------------------------------------------------------------------                            
+SELECT 
+    first_name, Last_name
+FROM
+    customer;
+-------------------------------------------------------------------------------------------------------
+SELECT 
+    First_name, city
+FROM
+    customer
+WHERE
+    first_name LIKE 'C%'
+        AND city = 'Nundurbar';
+
+----------------------------------------------------------------------------------------------------------------
+
+
+
